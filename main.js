@@ -26,9 +26,9 @@ var mainState = {
     //Timer for pipes
     this.timer = game.time.events.loop(1500, this.addRowOfPipes, this);
     //Score
-    this.score= 0;
-    this.labelScore =game.add.text(20, 20, "0")
-       { font: "30px Arial", fill: "#ffffff" }); 
+    this.score = 0;
+this.labelScore = game.add.text(20, 20, "0", 
+    { font: "30px Arial", fill: "#ffffff" });  
   },
   addOnePipe: function (x, y) {
     // Create a pipe at the position x and y
@@ -69,7 +69,7 @@ var mainState = {
   //Make the bird jump
   jump: function () {
     //Stops the bird being controlled  when it is dead, dead means dead
-    if (this.bird.alive == false)
+    if (this.bird.alive === false)
     return;
     //Add a vertial velocity to the bird
     this.bird.body.velocity.y = - 350;
@@ -77,7 +77,7 @@ var mainState = {
   hitPipe: function () {
     // If the bird has already hit a pipe, do nothing
     // It means the bird is already falling off the screen
-    if (this.bird.alive == false)
+    if (this.bird.alive === false)
     return;
     // Set  the alive property of the bird to false 
     this.bird.alive = false;
