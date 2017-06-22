@@ -27,7 +27,7 @@ var mainState = {
     this.timer = game.time.events.loop(1500, this.addRowOfPipes, this);
     //Score
     this.score= 0;
-    this.labelScore =game.add.text(20, 20, "0"
+    this.labelScore =game.add.text(20, 20, "0")
        { font: "30px Arial"; fill: "#ffffff" }); 
   },
   addOnePipe: function (x, y) {
