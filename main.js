@@ -66,7 +66,7 @@ this.bird.anchor.setTo(-0.2, 0.5);
     this.restartGame();
     //calls the restartGame function each time the bird dies
     game.physics.arcade.overlap(
-     this.bird , this.pipes, this.restartGame, null, this) ;
+     this.bird , this.pipes, this.hitPipe, null, this) ;
     if (this.bird.angle < 20)
     this.bird.angle += 1; 
   },
