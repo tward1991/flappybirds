@@ -100,6 +100,7 @@ hitPipe: function()  {
   //Start the 'main' state, which restarts the game
   game.state.start('main');
   },
+};
 // Initialize Phaser, and create a 400px by 490px game
 var game = new Phaser.Game(400, 490);
 
