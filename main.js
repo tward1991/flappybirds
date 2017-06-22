@@ -24,7 +24,7 @@ var mainState = {
     //Create an empty group
     this.pipes = game.add.group();
     //Timer for pipes
-    this.timer = game.time.events.loop(1500, this, addRowOfPipes, this);
+    this.timer = game.time.events.loop(1500, this.addRowOfPipes, this);
   },
   addOnePipe: function (x, y) {
     // Create a pipe at the position x and y
