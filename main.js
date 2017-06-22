@@ -76,6 +76,7 @@ update: function() {
     
     //Add a vertial velocity to the bird
     this.bird.body.velocity.y = -350;
+  },
     
 hitPipe: function()  {
  // If the bird has already hit a pipe, do nothing
