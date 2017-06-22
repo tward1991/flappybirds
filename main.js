@@ -28,7 +28,9 @@ var mainState = {
     //Score
     this.score = 0;
 this.labelScore = game.add.text(20, 20, "0", 
-    { font: "30px Arial", fill: "#ffffff" });  
+    { font: "30px Arial", fill: "#ffffff" }); 
+     // Move the anchor to the left and downward
+this.bird.anchor.setTo(-0.2, 0.5); 
   },
   addOnePipe: function (x, y) {
     // Create a pipe at the position x and y
@@ -65,6 +67,8 @@ this.labelScore = game.add.text(20, 20, "0",
     //calls the restartGame function each time the bird dies
     game.physics.arcade.overlap(
      this.bird , this.pipes, this.restartGame, null, this) ;
+    if (this.bird.angle < 20)
+    this.bird.angle += 1; 
   },
   //Make the bird jump
   jump: function () {
@@ -73,6 +77,14 @@ this.labelScore = game.add.text(20, 20, "0",
     return;
     //Add a vertial velocity to the bird
     this.bird.body.velocity.y = - 350;
+    // Create an animation on the bird
+var animation = game.add.tween(this.bird);
+
+// Change the angle of the bird to -20° in 100 milliseconds
+animation.to({angle: -20}, 100);
+
+// And start the animation
+animation.start(); 
   },
   hitPipe: function () {
     // If the bird has already hit a pipe, do nothing
