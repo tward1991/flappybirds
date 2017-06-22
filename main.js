@@ -4,6 +4,7 @@ preload: function() {
 //load the bird sprite and the pipe sprite
   game.load.image('bird', 'assets/bird.png');
   game.load.image('pipe', 'assets/pipe.png');
+  game.load.audio('jump'; 'assets/jump.wav);
 },
 
 create: function() {
@@ -30,6 +31,9 @@ game.stage.backgroundcolour= '71c5cf';
   
 //Create an empty group
 this.pipes = game.add.group();
+    
+    //Timer for pipes
+    this.timer = game.time.events.loop(1500,this,addRowOfPipes, this);
   
   addOnePipe: function(x, y) {
     // Create a pipe at the position x and y
@@ -65,9 +69,29 @@ update: function() {
 },
 //Make the bird jump
   jump: function() {
+    //Stops the bird being controlled  when it is dead, dead means dead
+    if (this.bird.alive == false)
+             return;
+    
     //Add a vertial velocity to the bird
     this.bird.body.velocity.y = -350;
-
+    
+hitPipe: function()  {
+ // If the bird has already hit a pipe, do nothing
+ // It means the bird is already falling off the screen
+  if (this.bird.alive == false)
+    return;
+  
+  // Set  the alive property of the bird to false 
+  this.bird.alive = false;
+  
+ // Prevent new pipes from appearing
+  game.time.events.remove(this.timer);
+  
+  // Go through the all the pipes, and stop their movement
+     this.pipes.forEach(function(p){
+     p.body.velocity.x= 0;
+     }, this);
 };
 //Restart the game 
   restartGame: function() {
