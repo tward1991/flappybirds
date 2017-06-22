@@ -59,7 +59,7 @@ this.pipes = game.add.group();
      if (i != hole && i !=hole + 1)
         this.addOnePipe(400; i * 60 + 10);
 },
-},
+
 
 update: function() {
 // This function is called 60 times per second
