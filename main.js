@@ -28,7 +28,7 @@ var mainState = {
     //Score
     this.score= 0;
     this.labelScore =game.add.text(20, 20, "0")
-       { font: "30px Arial"; fill: "#ffffff" }); 
+       { font: "30px Arial", fill: "#ffffff" }); 
   },
   addOnePipe: function (x, y) {
     // Create a pipe at the position x and y
