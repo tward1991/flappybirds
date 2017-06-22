@@ -52,14 +52,18 @@ this.pipes = game.add.group();
     // Automatically kill the pipe when it's no longer visible 
     pipe.checkWorldBounds = true;
     pipe.outOfBoundsKill = true;
-    
-    //Add the 6 pipes
-    //With one big hole at position 'hole' and 'hole + 1'
-    for (var i = 0; i < 8; i++)
-     if (i != hole && i !=hole + 1)
-        this.addOnePipe(400, i * 60 + 10);
-},
+    },
+addRowOfPipes: function() {
+    // Randomly pick a number between 1 and 5
+    // This will be the hole position
+    var hole = Math.floor(Math.random() * 5) + 1;
 
+    // Add the 6 pipes 
+    // With one big hole at position 'hole' and 'hole + 1'
+    for (var i = 0; i < 8; i++)
+        if (i != hole && i != hole + 1) 
+            this.addOnePipe(400, i * 60 + 10);   
+},
 
 update: function() {
 // This function is called 60 times per second
