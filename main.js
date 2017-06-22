@@ -27,7 +27,7 @@ game.stage.backgroundcolour= '71c5cf';
   //Call the 'jump' function when the spacebar is pressed
   var spaceBar = game.input.keyboard.addKey(
                  Phaser.Keyboard.SPACEBAR);
-  spaceBAR.onDown.add(this.jump, this);
+  spaceBar.onDown.add(this.jump, this);
   
 //Create an empty group
 this.pipes = game.add.group();
