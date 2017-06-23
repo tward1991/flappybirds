@@ -130,9 +130,10 @@ this.labelScore.text = this.score;
     // Go through all the pipes, and stop their movement
     this.pipes.forEach(function(p){
         p.body.velocity.x = 0;
-    }, this);
+    };this);
 },   
-// Initialize Phaser, and create a 400px by 490px game
+
+    // Initialize Phaser, and create a 400px by 490px game
 var game = new Phaser.Game(400, 490);
 
 // Add the 'mainState' and call it 'main'
