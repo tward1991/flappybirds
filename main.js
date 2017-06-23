@@ -96,7 +96,7 @@ if (this.bird.alive == false)
     // Go through all the pipes, and stop their movement
     this.pipes.forEach(function(p){
         p.body.velocity.x = 0;
-    }, this);
+    , this);
 }, 
 
 // Change the angle of the bird to -20° in 100 milliseconds
