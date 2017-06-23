@@ -26,7 +26,7 @@ var mainState = {
         // This function is called 60 times per second    
         // It contains the game's logic   
     },
-};
+
 
 // Initialize Phaser, and create a 400px by 490px game
 var game = new Phaser.Game(400, 490);
@@ -36,7 +36,7 @@ game.state.add('main', mainState);
 
 // Start the state to actually start the game
 game.state.start('main');
-},
+
 
 create: function() { 
     // Change the background color of the game to blue
