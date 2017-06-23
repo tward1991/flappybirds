@@ -6,7 +6,7 @@ var mainState = {
 		
 		//Load the bird sprite
 		game.load.image('bird', 'assets/which1.png');
-		game.load.image('pipe', 'assets/sweet.png');
+		game.load.image('pipe', 'assets/sweets.png');
 		game.load.audio('jump', 'assests/jump.wav');
 	},
 	
