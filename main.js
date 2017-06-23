@@ -85,7 +85,7 @@ var animation = game.add.tween(this.bird);
     // It means the bird is already falling off the screen
     if (this.bird.alive == false)
         return;
-if (this.bird.alive == false)
+    if (this.bird.alive == false)
     return; 
     // Set the alive property of the bird to false
     this.bird.alive = false;
@@ -96,7 +96,7 @@ if (this.bird.alive == false)
     // Go through all the pipes, and stop their movement
     this.pipes.forEach(function(p){
         p.body.velocity.x = 0;
-    , this);
+    this);
 }, 
 
 // Change the angle of the bird to -20° in 100 milliseconds
