@@ -104,3 +104,56 @@ var mainState = {
 	this.pipes.forEach(function(p){	
 		p.body.velocity.x = 0;
 	},this);
+	},	
+		
+	
+	//Restart the game
+	restartGame: function() {
+		//Start the 'main' state, which restarts the game
+	game.state.start('main');
+	},
+	
+	//Add a pipe
+	addOnePipe: function(x, y) {
+		//Create a pipe at the position x and y
+		var pipe = game.add.sprite(x, y, 'pipe');
+		
+		//Add pipe to group
+		this.pipes.add(pipe);
+		
+		//Enable the physics on the pipe
+		game.physics.arcade.enable(pipe);
+		
+		//Add velocity to the pipe to make it move left
+		pipe.body.velocity.x = -200;
+		
+		//Automatically kill pipe when it is not longer visible
+		pipe.checkWorldBounds = true;
+		pipe.outOfBoundsKill = true;
+	},
+	
+	//Many pipes
+	addRowOfPipes: function() {
+		//Randomly pick a number between 1 and 5
+		//This will be the hole position in the pipe
+		var hole = Math.floor(Math.random() * 5) + 1;
+		
+		//Add 6 pipes
+		for (var i = 0; i < 8; i++)
+			if (i != hole && i != hole +1)
+				this.addOnePipe(400, i * 60 + 10);
+		//Increases score as new pipes are created 
+		this.score += 1;
+		this.labelScore.text = this.score;
+	},
+};
+
+//Initialise Phaser, and create a 400px x 490px game
+var game = new Phaser.Game(400, 490);
+
+//Add the 'mainState' and call it 'main'
+game.state.add('main', mainState);
+
+//Start the state to actually start the game
+game.state.start('main');	
+		
