@@ -115,7 +115,7 @@ this.labelScore.text = this.score;
   },
 };
 
-    hitPipe: function() {if (this.bird.alive == false)
+    hitPipe: function() if (this.bird.alive == false)
     return; 
     // If the bird has already hit a pipe, do nothing
     // It means the bird is already falling off the screen
