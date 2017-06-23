@@ -113,7 +113,7 @@ restartGame: function() {
     this.score += 1;
 this.labelScore.text = this.score;  
   };
-};
+
     hitPipe: function() {if (this.bird.alive == false)
     return; 
     // If the bird has already hit a pipe, do nothing
