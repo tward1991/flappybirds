@@ -112,7 +112,8 @@ restartGame: function() {
             this.addOnePipe(400, i * 60 + 10); 
     this.score += 1;
 this.labelScore.text = this.score;  
-  };
+  },
+};
 
     hitPipe: function() {if (this.bird.alive == false)
     return; 
